@@ -43,26 +43,17 @@
           checkTime()
       }, countdown*1000)
       }
-      for (let i = 0; i < 4; i++) {
-        var j = (3 - i) * 1000;
-
-        setTimeout(() => {
-
-          document.getElementById("countdown").innerHTML = i;
-        }, j)
-      }
-      setTimeout(() => {
-        if (myTime == undefined)
-          document.getElementById("target").innerHTML = "Too Slow";
-        else {
-          var buttonTime = Date.now();
-          var diff = buttonTime - myTime;
-
-          document.getElementById("target").innerHTML = "Time was " + diff + " ms"
-          myTime = undefined
-        }
-      }, 3000)
+      function checkTime(){
+    var element = document.getElementById("target")
+    if(myTime == undefined)
+        element.innerHTML = "Too Slow"
+    else
+    {
+        var buttonTime = Date.now()
+        var difference = buttonTime - myTime
+        element.innerHTML = "Time was " + difference
     }
+  }
   </script>
 
 </body>
